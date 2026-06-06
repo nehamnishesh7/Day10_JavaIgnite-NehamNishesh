@@ -51,7 +51,9 @@ public class ATMSystem {
         } catch (InsufficientBalanceException e) {
             System.out.println(e.getMessage());
         } finally {
-            scanner.close();
+            if (scanner != null) {
+                scanner.close();
+            }
         }
     }
 }
